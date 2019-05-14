@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Compra</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <a href="#" class="navbar-brand">Tienda Online</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="{% url 'productos' %}" class="nav-link">Productos</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'compra' %}" class="nav-link">Carrito</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'login' %}" class="nav-link">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

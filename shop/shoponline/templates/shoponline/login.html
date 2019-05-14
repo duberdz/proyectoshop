@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,11 +8,11 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <title>Home</title>
-        <!-----------bootstrap-----------------------------------------------------------------------
+        <!---------bootstrap-----------------------------------------------------------------------
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous">-->
+              crossorigin="anonymous"-->
     </head>
     <body>
         <div class="card">
@@ -20,6 +20,7 @@
                 <h4 class="card-title text-center mb-4 mt-1">Inicia Sesion</h4>
                 <hr>
                 <form>
+                    {% csrf_token %}
                 <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -37,7 +38,7 @@
                 </div>
                 </div>
                 <div class="form-group">
-                    <a href="{% url 'productos' %}" class="btn btn-primary btn-block">Entrar</a>
+                    <button class="btn btn-primary btn-block" type="submit" name="login"/>Entrar</button>
                 </div>
                 <p class="text-center"><a href="#" class="btn">Olvidaste tu contraseña?</a></p>
                 </form>
