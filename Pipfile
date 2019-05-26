@@ -6,7 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django = "==2.2.1"
+behave = "*"
+splinter = "*"
 
 [requires]
 python_version = "3.6"
