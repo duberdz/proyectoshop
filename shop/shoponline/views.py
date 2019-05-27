@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.core.checks import messages
 from django.shortcuts import render, redirect
-from .forms import NewUserForm
+#from .forms import NewUserForm
 #from django.http import HttpResponse
 
 # Create your views here.
@@ -22,7 +22,7 @@ def productos(request):
 	return render(request, 'productos.html', context={'producto': productos})
 
 def compra(request):
-	compra = Orden.objects.all()
+	compra = Carrito.objects.all()
 	return render(request, 'compra.html', context={'compra':compra})
 
 def login(request):

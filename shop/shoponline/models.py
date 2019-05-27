@@ -1,14 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from django.urls import reverse
+from datetime import date
 # Create your models here.
-
-class Usuario(models.Model):
-    nombre = models.CharField(max_length=30)
-    direccion = models.CharField(max_length=50)
-    ciudad = models.CharField(max_length=60)
-
-    def __str__(self):
-        return 'Usuario :' + self.nombre
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30)
@@ -25,14 +19,7 @@ class Productos(models.Model):
     def __str__(self):
          return 'Productos :' + self.nombre
 
-class Envio(models.Model):
-    nombre = models.CharField(max_length=30)
-    telefono = models.IntegerField()
-
-    def __str__(self):
-         return 'Envio :' + self.nombre
-
-class Orden(models.Model):
-    usuario = models.ForeignKey('Usuario' , on_delete=models.SET_NULL , null=True)
-    producto = models.ForeignKey('Productos' , on_delete=models.SET_NULL , null=True)
-    envio = models.ForeignKey('Envio' , on_delete=models.SET_NULL , null=True)
+class Carrito(models.Model):
+    usuario = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+    producto = models.ForeignKey('Productos', on_delete=models.SET_NULL, null=True)
+    pago = models.CharField(max_length=10)
