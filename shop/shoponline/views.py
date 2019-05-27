@@ -15,7 +15,7 @@ def home(request):
 
 def login(request):
 	form = AuthenticationForm()
-	return render(request = request,template_name='login.html',context={"form":form})
+	return render(request = request,template_name='old_login.html',context={"form":form})
 
 def productos(request):
 	productos = Productos.objects.all()
@@ -42,4 +42,4 @@ def login(request):
 			messages.error(request, "Invalid username or password")
 
 	form = AuthenticationForm()
-	return render(request = request, template_name='login.html', context={"form":form})
+	return render(request = request, template_name='old_login.html', context={"form":form})

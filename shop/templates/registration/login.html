@@ -1,48 +1,55 @@
-{% load staticfiles %}
-<!doctype html>
-<html>
-    <head>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda online</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-        <title>Home</title>
-        <!---------bootstrap-----------------------------------------------------------------------
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous"-->
-    </head>
-    <body>
-        <div class="card">
-            <article class="card-body">
-                <h4 class="card-title text-center mb-4 mt-1">Inicia Sesion</h4>
-                <hr>
-                <form>
-                    {% csrf_token %}
-                <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                     </div>
-                    <input name="" class="form-control" placeholder="Usuario" type="text">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+    {% if form.errors %}
+        <p class="text-success text-center">Tu nombre o contraseña son incorrectas. Por favor vuelve a intentarlo.</p>
+    {% endif %}
+
+    <div class="card">
+    <article class="card-body">
+        <h4 class="card-title text-center mb-4 mt-1">Tienda Online</h4>
+        <hr>
+        <p class="text-success text-center">Inicia Sesion</p>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
                 </div>
+                <!--<input name="" class="form-control" placeholder="Email or login" type="email">-->
+            </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <div class="form-group" align="center">
+            <div class="input-group" align="center">
+                <div class="input-group-prepend" align="center">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
                 </div>
-                <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                     </div>
-                    <input class="form-control" placeholder="******" type="password">
-                </div>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit" name="login"/>Entrar</button>
-                </div>
-                <p class="text-center"><a href="#" class="btn">Olvidaste tu contraseña?</a></p>
-                </form>
-            </article>
-        </div>
-    </body>
+                <!--<input class="form-control" placeholder="******" type="password">-->
+            </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <div class="form-group">
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+
+        </div> <!-- form-group// -->
+        <p class="text-center"><a href="#" class="btn">¿Haz olvidado tu contraseña?</a></p>
+        </form>
+    </article>
+    </div>
+
+</body>
 </html>

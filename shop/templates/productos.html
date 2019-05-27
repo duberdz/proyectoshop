@@ -1,10 +1,17 @@
 <html>
 <head>
     <title>Productos</title>
-    <link rel="stylesheet"
+    <!--<link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
+          crossorigin="anonymous">-->
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style type="text/css">
             .row div {
@@ -24,7 +31,26 @@
                     <a href="{% url 'compra' %}" class="nav-link">Carrito</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="{% url 'login' %}" class="nav-link">Salir</a>
+                    <!--<a href="{% url 'login' %}" class="nav-link">Salir</a>-->
+                    <!--{% block header %}
+                        {% if user.is_authenticated %}
+                            <p>{{ user.username }} | <a href="{% url 'login' %}?next={{request.path}}">logout</a></p>
+                        {% endif %}
+                    {% endblock %}-->
+                    <!--<div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.username }}
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'login' %}?next={{request.path}}">logout</a>
+                        </div>
+                    </div>-->
+                </li>
+                <li class="navbar-item">
+                    <p>{{ user.username }}</p>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}?next={{request.path}}">logout</a>
                 </li>
             </ul>
         </div>
@@ -58,5 +84,11 @@
             </div>
         {% endfor %}
     </div>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </body>
 </html>

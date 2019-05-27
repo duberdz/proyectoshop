@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tienda online</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+    {% if form.errors %}
+        <p>Tu usuario o contraseña son erroneos. Por favor vuelve a intentar.</p>
+    {% endif %}
+    <form method="post" action="{% url 'login' %}" >
+        {% csrf_token %}
+         <div class="card">
+             <article class="card-body">
+                 <div class="form-group">
+                     <p class="text-center">Inicia sesion</p>
+                     <div class="input-group">
+                         <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i>{{ form.username.label_tag }}</span>
+                         </div>
+                                {{ form.username }}
+                     </div>
+                     <div class="input-group">
+                         <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i>{{ form.password.label_tag }}</span>
+                         </div>
+                                {{ form.password }}
+                     </div>
+                     <div class="form-group">
+                        <input type="submit" value="login" />
+                        <input type="hidden" name="next" value="{{ next }}" />
+                     </div>
+                 </div>
+                 <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+             </article>
+         </div>
+    </form>
+</body>
+</html>
