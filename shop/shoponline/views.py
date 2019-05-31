@@ -14,14 +14,14 @@ def home(request):
 
 def login(request):
 	form = AuthenticationForm()
-	return render(request = request,template_name='old_login.html',context={"form":form})
+	return render(request = request,template_name='login.html',context={"form":form})
 
 @login_required(login_url='/accounts/login')
-def add_product(nombre):
+def add_product(request, nombre):
 	context = {}
 	articulo = Carrito.objects()
 	articulo.producto = nombre
-	articulo.usuario = form.cleaned_data.get('username')
+	articulo.usuario = request.user
 	articulo.pago = 'pendiente'
 	articulo.save()
 		#return HttpResponseRedirect('confirm.html')
@@ -62,4 +62,4 @@ def login(request):
 			messages.error(request, "Invalid username or password")
 
 	form = AuthenticationForm()
-	return render(request = request, template_name='old_login.html', context={"form":form})
+	return render(request = request, template_name='login.html', context={"form":form})

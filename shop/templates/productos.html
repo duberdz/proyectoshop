@@ -42,17 +42,15 @@
             </ul>
         </div>
     </nav>
-    <div class="container" style="margin-top:30px;" align="center">
-        <ul>
+    <div class="container" vocab="http://schema.org" typeof="ItemList" style="margin-top:30px;" align="center">
             {% for i in all_productos %}
-            <p>
-                {{ i.nombre }}
-                {{ i.precio }}
-                {{ i.categoria }}
-            </p>
-            <a class="btn btn-primary" href="{% url 'add_product' i.nombre %}" type="submit" name="name" placeholder="name" role="button">Añadir</a>
+                <div property="itemListElement" typeof="Product">
+                    Producto: <span property="name">{{ i.nombre }}</span><br>
+                    Precio: <span property="priceCurrency" content="EUR">{{ i.precio }}</span><br>
+                    Categoria: <span property="category">{{ i.categoria }}</span><br>
+                    <a class="btn btn-primary" href="{% url 'add_product' nombre=i.nombre %}" type="submit" name="name" placeholder="name" role="button">Añadir</a>
+                </div>
             {% endfor %}
-        </ul>
     </div>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
