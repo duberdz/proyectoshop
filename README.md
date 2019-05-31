@@ -77,12 +77,17 @@ d) Per llençar el Heroku: $ heroku open
                 
                 5. Links pràctica:
 a) GitHub : https://github.com/duberdz/proyectoshop
+
 b) Heroku app : https://proyectoweb-shop.herokuapp.com/
+
 c) Usuari i contrasenya : “Usuari: admin, Contrasenya: admin”
 
 
 
 ----------------------------------------------Deliverable 2-----------------------------------------------------------------
+
+
+
 
 
 
