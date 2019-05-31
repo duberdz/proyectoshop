@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/logout/', views.LogoutView.as_view(), name='logout'),
     path('productos/', include('shoponline.urls')),
     path('compra/', include('shoponline.urls')),
+    path('confirm/', include('shoponline.urls')),
 ]

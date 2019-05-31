@@ -4,10 +4,10 @@ Feature: add product
   I want to add the product at a list to buy
 
   Background: There is a registered user
-    Given Exists a user "user1" with password "password"
+    Given Exists a user "user" with password "password"
 
   Scenario: add the product
-    Given I login as user "user1" with password "password"
+    Given I login as user "user" with password "password"
     When I add product
       | usuario       | producto      | pago          |
       | user          | Champu        | pendiente     |

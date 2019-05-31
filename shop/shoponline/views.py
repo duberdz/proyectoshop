@@ -1,12 +1,11 @@
 from django.contrib.auth import authenticate
 from django.core.checks import messages
-from django.shortcuts import render, redirect
-#from .forms import NewUserForm
-#from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, render_to_response
 
 # Create your views here.
 from .models import *
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -17,9 +16,30 @@ def login(request):
 	form = AuthenticationForm()
 	return render(request = request,template_name='old_login.html',context={"form":form})
 
+@login_required(login_url='/accounts/login')
+def add_product(nombre):
+	context = {}
+	articulo = Carrito.objects()
+	articulo.producto = nombre
+	articulo.usuario = form.cleaned_data.get('username')
+	articulo.pago = 'pendiente'
+	articulo.save()
+		#return HttpResponseRedirect('confirm.html')
+	return render_to_response('confirm.html')
+
+def confirm(request):
+	return render(request, 'confirm.html', {})
+
+@login_required(login_url='/accounts/login')
+def compra(request):
+	cart = Carrito.objects.all()
+	cart = cart.filter(user=request.user)
+	return render(request, 'compra.html', context={'cart': cart})
+
+@login_required(login_url='/accounts/login')
 def productos(request):
-	productos = Productos.objects.all()
-	return render(request, 'productos.html', context={'producto': productos})
+	all_productos = Productos.objects.all()
+	return render(request, 'productos.html', context={'all_productos': all_productos})
 
 def compra(request):
 	compra = Carrito.objects.all()

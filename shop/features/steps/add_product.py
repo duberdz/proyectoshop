@@ -1,12 +1,12 @@
 from behave import *
 
-@given(u'Exists a user "user1" with password "password"')
+'''@given(u'Exists a user "user1" with password "password"')
 def step_impl(context):
     raise NotImplementedError(u'STEP: Given Exists a user "user1" with password "password"')
 
 @given(u'I login as user "user1" with password "password"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I login as user "user1" with password "password"')
+    raise NotImplementedError(u'STEP: Given I login as user "user1" with password "password"')'''
 
 @when(u'I add product')
 def step_impl(context):

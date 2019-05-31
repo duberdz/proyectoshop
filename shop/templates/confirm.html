@@ -28,18 +28,10 @@
         </div>
     </nav>
     <div class="container" style="margin-top:30px;" align="center">
-        {% if user == Carrito.usuario %}
-        <ul>
-            {% for i in productos %}
-            <p>
-                {{ i.producto }}
-                {{ i.pago }}
-            </p>
-            <!--<a class="btn btn-primary" href="{% url 'add_product' pk=i.pk %}" role="button">Enviar</a>-->
-            <!--Cambiar la url a la funcion que pone "enviado" en pago.  Añadir funcion de eliminar producto-->
-            {% endfor %}
-        </ul>
-        {% endif %}
+        <p align="center">
+        <h1>Estas seguro de añadirlo a tu carrito?</h1>
+        </p>
+        <a class="btn btn-primary" href="{% url 'productos' %}" role="button">Si</a>
     </div>
 </body>
 </html>
