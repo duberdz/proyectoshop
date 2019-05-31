@@ -65,13 +65,21 @@ amb aquesta eina, però, seguirem treballant per poder implementar el Docker per
 seguir amb la següent entrega.
 
 4. Comandes importants projecte:
+
 a) Instal·lar Django :
+
         $ pipenv shell
+        
         $ pipenv instalar Django
+        
 b) Iniciar interficie Django: $ django-admin startproject proyectoshop
+
 c) Per afegir els models, editem el fitxer “models.py” guardamos i fem servir les
+
 comandes següents: $ python manage.py makemigrations shoponline
-        $ python manage.py migrate shoponline
+
+                   $ python manage.py migrate shoponline
+                   
 d) Per llençar el Heroku: $ heroku open
 
                 
