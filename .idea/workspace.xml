@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd4a5b6-ff3e-428f-873a-f9668a65d6d8" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/shop/templates/confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/shop/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/features/add_product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/shop/features/add_product.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/features/steps/add_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/features/steps/add_product.py" afterDir="false" />
@@ -99,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shop/templates/productos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
+            <state relative-caret-position="218">
+              <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -258,7 +259,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14892033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -462,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shop/templates/productos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="49" column="85" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
+        <state relative-caret-position="218">
+          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
         </state>
       </provider>
     </entry>
